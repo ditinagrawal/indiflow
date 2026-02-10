@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cereals & Grains Export | Indiflow Exim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="cereals export, grains export, rice export, wheat export, maize export, Indian cereals">
+    <meta name="description" content="Indiflow Exim exports premium-quality cereals and grains including rice, wheat, maize and other grains sourced from trusted farms across India.">
+
+    <!-- Favicon -->
+    <link href="img/favicon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background: linear-gradient(rgba(24, 29, 56, 0.7), rgba(24, 29, 56, 0.7)), url('img/cereals-grains.jpg') center center; background-size: cover;">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Cereals & Grains</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Products</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Cereals & Grains</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Our Product</h6>
+                    <h1 class="mb-4">Premium Cereals & Grains Export</h1>
+                    <p class="mb-4">
+                        Indiflow Exim specializes in exporting premium-quality cereals and grains sourced directly from trusted farms across India. We offer a wide range of grains including rice, wheat, maize, and other staple cereals that meet international quality standards.
+                    </p>
+                    <p class="mb-4">
+                        Our cereals and grains are carefully selected, processed, and packaged to ensure freshness, purity, and compliance with global export regulations. We maintain strict quality control throughout the supply chain to deliver consistent, high-quality products to our international partners.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content End -->
+
+
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Load Header and Footer -->
+    <script>
+        $(document).ready(function(){
+            // Scroll to top on page load/refresh
+            window.scrollTo(0, 0);
+            
+            // Load header
+            $("#header-placeholder").load("includes/header.html", function() {
+                // Set active class for current page
+                var path = window.location.pathname;
+                var currentPage = path.split("/").pop() || "index.html";
+                
+                // Handle root path or empty path - should be index.html
+                if (currentPage === "" || path === "/" || path.endsWith("/")) {
+                    currentPage = "index.html";
+                }
+                
+                // Remove all active classes first
+                $("#header-placeholder .nav-link").removeClass("active");
+                
+                // Set active class for matching link
+                $("#header-placeholder .nav-link").each(function() {
+                    var href = $(this).attr("href");
+                    // Normalize href - remove leading slash if present
+                    href = href.replace(/^\//, '');
+                    
+                    if (href === currentPage) {
+                        $(this).addClass("active");
+                    } else if (currentPage === "index.html" && href === "index.html") {
+                        $(this).addClass("active");
+                    }
+                });
+            });
+            
+            // Load footer
+            $("#footer-placeholder").load("includes/footer.html");
+        });
+    </script>
+</body>
+
+</html>
